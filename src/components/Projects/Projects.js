@@ -5,6 +5,7 @@ import Particle from "../Particle";
 import chatify from "../../Assets/Projects/chatify.png";
 import promptopia from "../../Assets/Projects/promptopia.png";
 import magflow from "../../Assets/Projects/magflow.png"
+import rotisseur from "../../Assets/Projects/Les_freres_rotisseurs.png"
 
 function Projects() {
   return (
@@ -49,6 +50,19 @@ function Projects() {
 
 "
               ghLink="https://github.com/1CS-Project-ESI/Magflow-backend"            
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={rotisseur}
+              isBlog={false}
+              title="Les Frères Rôtisseurs - Interactive Planning and Menu System"
+              description="Les Frères Rôtisseurs is a dynamic and responsive web application designed to enhance the customer experience for a food business. The platform features an interactive weekly planning system and an easy-to-navigate menu that adapts seamlessly to both desktop and mobile devices. Users can explore the weekly schedule of locations, categorized by day, and navigate smoothly to specific sections of the page with a scroll-to-card feature. Additionally, a pop-up menu displays the food offerings in an intuitive, visually appealing format. Built using React, this project showcases expertise in responsive design, user interaction, and front-end development. is a robust, all-in-one web and mobile platform developed to streamline store management processes for the Higher School of Computer Science Sidi Bel Abbes. Designed to enhance operational efficiency, MagFlow enables seamless inventory tracking, order management, and sales monitoring. With a user-friendly interface and responsive design, the system is accessible across devices, allowing for real-time updates and easy accessibility for store personnel and managers. Developed as part of the multidisciplinary project Arcana, MagFlow focuses on improving organizational workflow and supporting the institution's need for an efficient, tech-driven solution in store management.
+
+"             
+              ghLink="https://github.com/Waelalg/les_freres_rotisseurs"
+              demoLink="https://les-freres-rotisseurs.vercel.app/"           
             />
           </Col>
 

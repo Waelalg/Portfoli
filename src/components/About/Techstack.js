@@ -12,6 +12,7 @@ import {
 import {
   SiNextdotjs,
   SiPostgresql,
+  SiSocketdotio,
 } from "react-icons/si";
 
 function Techstack() {
@@ -43,6 +44,9 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiJava />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiSocketdotio/>
       </Col>
     </Row>
   );

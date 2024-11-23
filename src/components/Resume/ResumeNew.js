@@ -15,21 +15,30 @@ function ResumeNew() {
     setWidth(window.innerWidth);
   }, []);
 
+  const handleDownload = (e) => {
+    e.preventDefault();
+    const link = document.createElement('a');
+    link.href = pdf;
+    link.download = 'WAEL_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        {/* <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href={pdf}
-            target="_blank"
+            onClick={handleDownload}
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV
           </Button>
-        </Row> */}
+        </Row>
 
         <Row className="resume">
           <Document file={pdf} className="d-flex justify-content-center">
@@ -37,20 +46,20 @@ function ResumeNew() {
           </Document>
         </Row>
 
-        {/* <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href={pdf}
-            target="_blank"
+            onClick={handleDownload}
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV
           </Button>
-        </Row> */}
+        </Row>
       </Container>
     </div>
   );
 }
 
 export default ResumeNew;
+
