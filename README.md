@@ -1,76 +1,61 @@
-<h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
-</h2>
+# Portfolio Website — LEBAILI Mohamed Ouail
+
 <div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
+
+[![Built with love](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)  
+[![Made with JavaScript](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)  
+[![Open Source](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)  
+![GitHub Repo stars](https://img.shields.io/github/stars/Waelalg/Portfoli?color=red&logo=github&style=for-the-badge)  
+![GitHub forks](https://img.shields.io/github/forks/Waelalg/Portfoli?color=red&logo=github&style=for-the-badge)
+
 </div>
 
-<br/>
+---
 
-<center>
+A personal portfolio website for **LEBAILI Mohamed Ouail** (GitHub: [Waelalg](https://github.com/Waelalg)), showcasing projects, resume and skills. This React app is built to be responsive, easy to customize, and suitable for presenting both web and embedded/IoT projects.
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
+Live demo: **https://wael-lbl.app/**
 
-</center>
+---
 
-<h3 align="center">
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Request Feature</a>
-</h3>
+## What’s included / Features
 
-## TL;DR
+- Multi-page React portfolio (Home, About, Projects, Resume, etc.)
+- Resume viewer (renders multi-page PDF) + download button
+- Project cards (GitHub + Demo links) — placeholder shown when no image provided
+- GitHub activity calendar
+- Particle background and subtle UI effects
+- Responsive layout using React-Bootstrap
+- Accessible links and basic ARIA attributes
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Soumyajit4419](https://github.com/soumyajit4419/Portfolio). Thanks!
+---
 
-## Built With
+## Projects included in the portfolio
 
-My personal portfolio <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+(These are the public repositories included in the Projects section of the site. Each card links to the repo; add screenshots to `src/Assets/Projects/` to enable visual thumbnails.)
 
-This project was built using these technologies.
+- `attack_detection_dashboard` — https://github.com/Waelalg/attack_detection_dashboard  
+- `attendance-app` — https://github.com/Waelalg/attendance-app  
+- `IoT-Fleet-Management-Tracking` — https://github.com/Waelalg/IoT-Fleet-Management-Tracking  
+- `Magflow-backend` — https://github.com/1CS-Project-ESI/Magflow-backend  
+- `Real_time_chat_application` — https://github.com/Waelalg/Real_time_chat_application  
+- `Industrial-IoT-Machine-Monitoring-Control-System` — https://github.com/Waelalg/Industrial-IoT-Machine-Monitoring-Control-System  
+- `MERN-Movie-Recommendation` — https://github.com/Waelalg/MERN-Movie-Recommendation  
+- `botnet_attack_detect_backend` — https://github.com/Waelalg/botnet_attack_detect_backend  
+- `les_freres_rotisseurs` — https://github.com/Waelalg/les_freres_rotisseurs
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+---
 
-## Features
+## Tech stack
 
-**📖 Multi-Page Layout**
+- React.js (create-react-app style)
+- React Router
+- React-Bootstrap & Bootstrap
+- react-pdf for resume rendering
+- react-github-calendar
+- react-tsparticles for particle background
+- Icons: react-icons
+- Build / deploy friendly (Vercel, Netlify etc.)
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+---
 
-**📱 Fully Responsive**
-
-## Getting Started
-
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
-
-## 🛠 Installation and Setup Instructions
-
-1. Installation: `npm install`
-
-2. In the project directory, you can run: `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
-
-## Usage Instructions
-
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
-
-### Show your support
-
-Give a ⭐ if you like this website!
-
-<a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
