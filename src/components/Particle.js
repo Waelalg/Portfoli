@@ -1,3 +1,4 @@
+// File: src/components/Particle.js
 import React from "react";
 import Particles from "react-tsparticles";
 
