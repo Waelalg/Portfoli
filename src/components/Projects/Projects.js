@@ -9,6 +9,13 @@ import chatify from "../../Assets/Projects/chatify.png";
 import promptopia from "../../Assets/Projects/promptopia.png";
 import magflow from "../../Assets/Projects/magflow.png";
 import rotisseur from "../../Assets/Projects/Les_freres_rotisseurs.png";
+import attackDetect from "../../Assets/Projects/attack_detect_dash.jpg";
+import attendanceApp from "../../Assets/Projects/calss_attendance_dash.jpg";
+import smartFact from "../../Assets/Projects/smart_fact.png";
+import fleetTrack from "../../Assets/Projects/fleet_track.png";
+import movieRec from "../../Assets/Projects/movie_recom.png";
+import botnetDetect from "../../Assets/Projects/attack_detect_back.jpg";
+
 
 function Projects() {
   return (
@@ -19,7 +26,7 @@ function Projects() {
           My Recent <strong className="purple">Works </strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently. (Placeholders shown for projects without images — you can add screenshots later.)
+          Here are a few projects I've worked on recently. 
         </p>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
@@ -74,6 +81,7 @@ function Projects() {
           {/* Attack Detection Dashboard (no image yet - placeholder) */}
           <Col md={4} className="project-card">
             <ProjectCard
+            imgPath={attackDetect}
               isBlog={false}
               title="Attack Detection Dashboard"
               description="Dashboard + backend for visualizing and detecting network/IoT attacks in real time. Includes data ingestion, visualization panels, and alerting logic. Useful for security analysis and incident response demos."
@@ -84,6 +92,7 @@ function Projects() {
           {/* Attendance App (no image yet - placeholder) */}
           <Col md={4} className="project-card">
             <ProjectCard
+              imgPath={attendanceApp}
               isBlog={false}
               title="Attendance App"
               description="Full-stack attendance management system with role-based access (admin/teacher/student). Designed to support features such as attendance tracking, reports, and integrations. Implemented using React and a Node/Express backend."
@@ -94,6 +103,7 @@ function Projects() {
           {/* IoT Fleet Management Tracking (no image yet - placeholder) */}
           <Col md={4} className="project-card">
             <ProjectCard
+              imgPath={fleetTrack}
               isBlog={false}
               title="IoT Fleet Management & Tracking"
               description="End-to-end IoT fleet tracking system (device simulation, backend APIs, frontend dashboard). Focused on real-time location updates, telemetry and fleet status monitoring."
@@ -104,6 +114,7 @@ function Projects() {
           {/* Industrial IoT Machine Monitoring (no image yet - placeholder) */}
           <Col md={4} className="project-card">
             <ProjectCard
+              imgPath={smartFact}
               isBlog={false}
               title="Industrial IoT Machine Monitoring"
               description="Industrial IoT project for machine monitoring and basic control. Uses sensors (simulated or real), MQTT/REST communications and a dashboard for operational metrics and alerts."
@@ -114,6 +125,7 @@ function Projects() {
           {/* MERN Movie Recommendation (no image yet - placeholder) */}
           <Col md={4} className="project-card">
             <ProjectCard
+              imgPath={movieRec}
               isBlog={false}
               title="MERN Movie Recommendation"
               description="A movie recommendation platform built with the MERN stack. Implements recommendation algorithms, user profiles and searchable movie catalogs — a precursor to a full recommender system."
@@ -125,6 +137,7 @@ function Projects() {
           <Col md={4} className="project-card">
             <ProjectCard
               isBlog={false}
+              imgPath={botnetDetect}
               title="Botnet Attack Detection (Backend)"
               description="Backend for detecting botnet-like behavior and attacks against IoT devices. Contains data collection, preprocessing, and detection logic (rules or ML pipeline) for classifying suspicious activity."
               ghLink="https://github.com/Waelalg/botnet_attack_detect_backend"
