@@ -14,7 +14,7 @@
 
 A personal portfolio website for **LEBAILI Mohamed Ouail** (GitHub: [Waelalg](https://github.com/Waelalg)), showcasing projects, resume and skills. This React app is built to be responsive, easy to customize, and suitable for presenting both web and embedded/IoT projects.
 
-Live demo: **https://wael-lbl.app/**
+Live demo: **(https://www.wael-dev.me/)**
 
 ---
 
