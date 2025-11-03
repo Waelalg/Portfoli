@@ -43,12 +43,24 @@ export const getProjectSchema = (project) => {
     programmingLanguage: Array.isArray(project.languages) ? project.languages : [project.languages],
     author: {
       "@type": "Person",
-      name: "Wael Ouail Lebaili",
-      alternateName: ["Wael", "Ouail", "Lebaili", "Mohamed Ouail"],
+      name: "Wael",
+      givenName: "Mohamed",
+      familyName: "Lebaili",
+      alternateName: ["Wael Ouail Lebaili", "Ouail Lebaili", "Mohamed Ouail", "Wael Lebaili", "Mohamed Wael"],
       url: "https://www.wael-dev.me",
+      affiliation: {
+        "@type": "EducationalOrganization",
+        name: "ESI-SBA",
+      },
     },
     dateCreated: project.dateCreated || new Date().toISOString().split("T")[0],
-    keywords: "full stack development, React, Node.js, web development, portfolio",
+    keywords:
+      "full stack development, React, Node.js, web development, portfolio, Wael Lebaili, ESI-SBA, embedded systems, IoT, real-time systems",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Wael Ouail Lebaili Portfolio",
+      url: "https://www.wael-dev.me",
+    },
   }
 }
 

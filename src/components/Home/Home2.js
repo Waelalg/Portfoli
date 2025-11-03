@@ -26,19 +26,32 @@ function Home2() {
 
     elements.forEach((el) => observer.observe(el))
 
-    // Add meta tag updates for better SEO on this section
-    document.title = "About Wael Ouail Lebaili - Full Stack Developer | ESI-SBA Student"
+    document.title = "Wael - Mohamed Ouail Lebaili - Full Stack Developer | ESI-SBA | React & Node.js Portfolio"
     const metaDesc = document.querySelector("meta[name='description']")
     if (metaDesc) {
       metaDesc.content =
-        "Learn about Wael Ouail Lebaili, a full stack developer and ESI-SBA computer science student specializing in React, Node.js, embedded systems, IoT, and real-time security solutions."
+        "Wael (Mohamed Ouail Lebaili) - Full Stack Developer from ESI-SBA. Search: Wael, Mohamed, Ouail, Lebaili, Wael Ouail, Mohamed Wael, Lebaili Wael, ESI-SBA student. React, Node.js, IoT, embedded systems specialist."
     }
+
+    let keywordsMeta = document.querySelector("meta[name='keywords']")
+    if (!keywordsMeta) {
+      keywordsMeta = document.createElement("meta")
+      keywordsMeta.name = "keywords"
+      document.head.appendChild(keywordsMeta)
+    }
+    keywordsMeta.content =
+      "Wael, Mohamed, Ouail, Lebaili, full stack developer, React, Node.js, ESI-SBA, Sidi Bel Abbes, IoT, embedded systems, MQTT, real-time systems, web development portfolio"
 
     return () => observer.disconnect()
   }, [])
 
   return (
-    <Container fluid className="home-about-section scroll-reveal" id="about" aria-label="About section">
+    <Container
+      fluid
+      className="home-about-section scroll-reveal"
+      id="about"
+      aria-label="About section featuring Wael Ouail Lebaili"
+    >
       <Container>
         <Row>
           <Col md={8} className="home-about-description animate-fade-in-left">
@@ -46,7 +59,6 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
 
-            {/* Enhanced intro paragraph with more keywords and better structure for SEO */}
             <p
               className="home-about-body"
               style={{
@@ -54,9 +66,10 @@ function Home2() {
                 animation: "fadeInUp 0.8s ease-out 0.3s backwards",
               }}
             >
-              I'm <strong>Wael Ouail Lebaili</strong>, a passionate full stack developer and computer science
-              engineering student at ESI-SBA. I have extensive experience building end-to-end systems using modern web
-              technologies and emerging IoT platforms.
+              I'm <strong>Wael Ouail Lebaili</strong> (also known as Mohamed Ouail), a passionate full stack developer
+              and computer science engineering student at <strong>ESI-SBA</strong> (Higher School of Computer Science,
+              Sidi Bel Abbes). I have extensive experience building end-to-end systems using modern web technologies and
+              emerging IoT platforms.
               <br />
               <br />
               My expertise spans{" "}
