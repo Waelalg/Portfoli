@@ -1,15 +1,7 @@
 html {
-  --section-background-color: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.582),
-    rgba(12, 8, 24, 0.904)
-  );
+  --section-background-color: linear-gradient(to bottom left, rgba(17, 16, 16, 0.582), rgba(12, 8, 24, 0.904));
 
-  --image-gradient: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.678),
-    rgba(12, 10, 22, 0.863)
-  );
+  --image-gradient: linear-gradient(to bottom left, rgba(17, 16, 16, 0.678), rgba(12, 10, 22, 0.863));
 
   --imp-text-color: #c770f0;
 }
@@ -209,10 +201,10 @@ button:focus {
 /* Home section */
 /* --------- */
 .wave {
-  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.1s; /* Change to speed up or slow down */
-  animation-iteration-count: infinite; /* Never stop waving :) */
-  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  animation-name: wave-animation;
+  animation-duration: 2.1s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
   display: inline-block;
 }
 
@@ -222,7 +214,7 @@ button:focus {
   }
   10% {
     transform: rotate(14deg);
-  } /* The following five values can be played with to make the waving more or less extreme */
+  }
   20% {
     transform: rotate(-8deg);
   }
@@ -237,11 +229,12 @@ button:focus {
   }
   60% {
     transform: rotate(0deg);
-  } /* Reset for the last half to pause */
+  }
   100% {
     transform: rotate(0deg);
   }
 }
+
 #tsparticles {
   position: fixed !important;
   background-repeat: no-repeat !important;
@@ -273,21 +266,30 @@ button:focus {
 .heading {
   font-size: 2.4em !important;
   padding-left: 50px !important;
+  /* Added smooth fade-in animation */
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .heading-name {
   font-size: 2.5em !important;
   padding-left: 45px !important;
+  animation: fadeInUp 0.9s ease-out 0.2s both;
 }
 
 .main-name {
   color: #cd5ff8;
+  /* Added gradient text effect */
+  background: linear-gradient(135deg, #cd5ff8, #be6adf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
   color: #be6adf !important;
   font-weight: 600 !important;
+  animation: fadeInUp 1s ease-out 0.4s both;
 }
 .Typewriter__cursor {
   font-size: 2.4em !important;
@@ -308,6 +310,8 @@ button:focus {
 .myAvtar {
   justify-content: center !important;
   padding-top: 9em !important;
+  /* Added smooth rotation and fade animation */
+  animation: fadeInScale 1s ease-out 0.3s both;
 }
 
 @media (max-width: 767px) {
@@ -386,6 +390,8 @@ button:focus {
   color: #87209e;
   box-shadow: 0 0 5px #87209e;
   text-shadow: 0 0 2px #87209e;
+  /* Added smooth hover elevation */
+  transform: translateY(-3px);
 }
 
 .social-icons {
@@ -405,7 +411,7 @@ button:focus {
   background-color: rgb(10, 4, 22);
   bottom: 0 !important;
   padding-top: 10px !important;
-  padding-bottom: 8px !important ;
+  padding-bottom: 8px !important;
 }
 .footer-copywright {
   text-align: center !important;
@@ -466,9 +472,11 @@ button:focus {
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
+  /* Added smooth staggered fade-in animation */
+  animation: fadeInUp 0.8s ease-out;
 }
 .project-card-view:hover {
-  transform: scale(1.02) !important;
+  transform: scale(1.02) translateY(-5px) !important;
   overflow: hidden !important;
   box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
 }
@@ -508,6 +516,12 @@ button:focus {
   padding: 20px !important;
   opacity: 0.8 !important;
   border-radius: 10px !important;
+  /* Added smooth image zoom on hover */
+  transition: transform 0.4s ease;
+}
+
+.project-card-view:hover .card-img-top {
+  transform: scale(1.05);
 }
 
 .blog-img {
@@ -520,12 +534,16 @@ button:focus {
   color: #fff !important;
   background-color: #623686 !important;
   border-color: #623686 !important;
+  transition: all 0.3s ease !important;
 }
 
 .btn-primary:hover {
   color: #fff !important;
   background-color: #6d20c5d7 !important;
   border-color: #6d20c5d7 !important;
+  /* Added smooth button elevation */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(109, 32, 197, 0.3) !important;
 }
 .btn:focus {
   outline: none !important;
@@ -551,7 +569,7 @@ button:focus {
 }
 
 .tech-icons {
-  font-size: 4.5em !important;
+  font-size: 3em !important;
   margin: 15px !important;
   padding: 10px !important;
   opacity: 0.93 !important;
@@ -647,6 +665,8 @@ button:focus {
   margin-top: -2px;
   border-left: 2px solid #8a49a8;
   position: relative;
+  /* Added smooth fade-in from left */
+  animation: slideInLeft 0.6s ease-out;
 }
 
 .resume .resume-item .resume-title {
@@ -657,6 +677,12 @@ button:focus {
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.resume .resume-item .resume-title:hover {
+  background: #6d3a9e;
+  box-shadow: 0 4px 12px rgba(109, 58, 158, 0.3);
 }
 
 .resume .resume-item ul {
@@ -683,6 +709,13 @@ button:focus {
   top: 0;
   background: #fff;
   border: 2px solid #8a49a8;
+  /* Added smooth scale animation on focus */
+  transition: all 0.3s ease;
+}
+
+.resume .resume-item:hover::before {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px #8a49a8;
 }
 
 .like-item {
@@ -704,6 +737,7 @@ button:focus {
   transform: translateY(-2px) !important;
   background-color: #a24dd386 !important;
   border-color: #a24dd386 !important;
+  box-shadow: 0 4px 12px rgba(162, 77, 211, 0.3) !important;
 }
 
 .animate-like {
@@ -731,13 +765,51 @@ button:focus {
   padding: 0.25rem 1.1rem !important;
   vertical-align: middle !important;
   text-align: center !important;
+  transition: all 0.3s ease !important;
 }
 
 .fork-btn-inner:hover {
   transform: translateY(-2px) !important;
   background-color: #a24dd386 !important;
   border-color: #a24dd386 !important;
+  box-shadow: 0 4px 12px rgba(162, 77, 211, 0.3) !important;
 }
 .fork-btn-inner::after {
   display: none !important;
+}
+
+/* --------- */
+/* Global Animation Keyframes */
+/* --------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

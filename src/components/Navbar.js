@@ -1,52 +1,55 @@
-// File: src/components/Navbar.js
-import React, { useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import logo from "../Assets/logo.png";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
-import {
-  AiFillStar,
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiOutlineUser,
-} from "react-icons/ai";
+"use client"
 
-import { CgFileDocument } from "react-icons/cg";
+import { useState, useEffect } from "react"
+import Navbar from "react-bootstrap/Navbar"
+import Nav from "react-bootstrap/Nav"
+import Container from "react-bootstrap/Container"
+import logo from "../Assets/logo.png"
+import Button from "react-bootstrap/Button"
+import { Link } from "react-router-dom"
+import { CgGitFork } from "react-icons/cg"
+import { AiFillStar, AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from "react-icons/ai"
+import { CgFileDocument } from "react-icons/cg"
 
 function NavBar() {
-  const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+  const [expand, updateExpanded] = useState(false)
+  const [navColour, updateNavbar] = useState(false)
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
-      updateNavbar(true);
+      updateNavbar(true)
     } else {
-      updateNavbar(false);
+      updateNavbar(false)
     }
   }
 
-  window.addEventListener("scroll", scrollHandler);
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler)
+    return () => window.removeEventListener("scroll", scrollHandler)
+  }, [])
 
   return (
     <Navbar
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      className={`transition-all-smooth ${navColour ? "sticky" : "navbar"}`}
+      style={{
+        background: navColour ? "rgba(27, 26, 46, 0.95)" : "transparent",
+        backdropFilter: navColour ? "blur(10px)" : "none",
+        boxShadow: navColour ? "0px 10px 20px rgba(0, 0, 0, 0.1)" : "none",
+      }}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
+        <Navbar.Brand href="/" className="d-flex animate-fade-in-left">
+          <img src={logo || "/placeholder.svg"} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
-            updateExpanded(expand ? false : "expanded");
+            updateExpanded(expand ? false : "expanded")
           }}
+          style={{ borderColor: "transparent" }}
         >
           <span></span>
           <span></span>
@@ -55,7 +58,16 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link
+                as={Link}
+                to="/"
+                onClick={() => updateExpanded(false)}
+                className="transition-colors-smooth"
+                style={{
+                  position: "relative",
+                  padding: "0.5rem 1rem",
+                }}
+              >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
@@ -65,6 +77,8 @@ function NavBar() {
                 as={Link}
                 to="/about"
                 onClick={() => updateExpanded(false)}
+                className="transition-colors-smooth"
+                style={{ position: "relative", padding: "0.5rem 1rem" }}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
@@ -75,11 +89,10 @@ function NavBar() {
                 as={Link}
                 to="/project"
                 onClick={() => updateExpanded(false)}
+                className="transition-colors-smooth"
+                style={{ position: "relative", padding: "0.5rem 1rem" }}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Projects
               </Nav.Link>
             </Nav.Item>
 
@@ -88,27 +101,33 @@ function NavBar() {
                 as={Link}
                 to="/resume"
                 onClick={() => updateExpanded(false)}
+                className="transition-colors-smooth"
+                style={{ position: "relative", padding: "0.5rem 1rem" }}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
 
-
             <Nav.Item className="fork-btn">
               <Button
                 href="https://github.com/Waelalg/Portfoli"
                 target="_blank"
-                className="fork-btn-inner"
+                className="fork-btn-inner transition-transform-smooth hover-lift"
+                style={{
+                  background: "rgba(147, 76, 206, 0.3)",
+                  border: "1px solid rgba(192, 132, 245, 0.5)",
+                  color: "white",
+                  borderRadius: "6px",
+                }}
               >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
+                <CgGitFork style={{ fontSize: "1.2em" }} /> <AiFillStar style={{ fontSize: "1.1em" }} />
               </Button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
