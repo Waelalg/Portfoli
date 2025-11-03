@@ -2,13 +2,24 @@
 User-agent: *
 Allow: /
 Disallow: /node_modules/
+Disallow: /.git/
 
 # Sitemap location
 Sitemap: https://yourportfolio.com/sitemap.xml
 
-# Specific rules for bots
+# Specific rules for Google
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
+# Specific rules for Bing
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
