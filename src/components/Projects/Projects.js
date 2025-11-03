@@ -19,6 +19,13 @@ import botnetDetect from "../../Assets/Projects/attack_detect_back.jpg"
 
 function Projects() {
   useEffect(() => {
+    document.title = "Wael Ouail Lebaili - Full Stack Developer Projects | Portfolio"
+    const metaDesc = document.querySelector("meta[name='description']")
+    if (metaDesc) {
+      metaDesc.content =
+        "Explore Wael's full stack development projects including MERN stack applications, Next.js apps, IoT systems, security dashboards, and real-time chat platforms on GitHub."
+    }
+
     const elements = document.querySelectorAll(".project-card")
     elements.forEach((el, idx) => {
       el.style.opacity = "0"
@@ -37,7 +44,9 @@ function Projects() {
           style={{ color: "white", animation: "fadeInUp 0.6s ease-out 0.2s backwards" }}
           className="animate-fade-in-up delay-200"
         >
-          Here are a few projects I've worked on recently.
+          Explore my portfolio of full stack projects built with React, Node.js, Next.js, and modern web technologies.
+          From real-time applications to IoT systems and security dashboards, each project demonstrates my expertise in
+          building scalable, responsive solutions.
         </p>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>

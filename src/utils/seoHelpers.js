@@ -1,9 +1,6 @@
-// SEO Helper functions to dynamically update meta tags
 export const updateMetaTags = (title, description, url) => {
-  // Update title
-  document.title = `${title} | Wael - Full Stack Developer`
+  document.title = `${title} | Wael Ouail Lebaili - Full Stack Developer`
 
-  // Update or create meta description
   let metaDescription = document.querySelector("meta[name='description']")
   if (!metaDescription) {
     metaDescription = document.createElement("meta")
@@ -12,19 +9,17 @@ export const updateMetaTags = (title, description, url) => {
   }
   metaDescription.content = description
 
-  // Update canonical URL
   let canonical = document.querySelector("link[rel='canonical']")
   if (!canonical) {
     canonical = document.createElement("link")
     canonical.rel = "canonical"
     document.head.appendChild(canonical)
   }
-  canonical.href = url
+  canonical.href = `https://www.wael-dev.me${url}`
 
-  // Update Open Graph tags
   updateOpenGraphTag("og:title", title)
   updateOpenGraphTag("og:description", description)
-  updateOpenGraphTag("og:url", url)
+  updateOpenGraphTag("og:url", `https://www.wael-dev.me${url}`)
 }
 
 export const updateOpenGraphTag = (property, content) => {
@@ -37,19 +32,32 @@ export const updateOpenGraphTag = (property, content) => {
   tag.content = content
 }
 
-// Rich snippet data for projects
 export const getProjectSchema = (project) => {
   return {
     "@context": "https://schema.org/",
     "@type": "SoftwareSourceCode",
     name: project.name,
     description: project.description,
-    url: project.liveLink,
+    url: project.liveLink || project.githubLink,
     codeRepository: project.githubLink,
-    programmingLanguage: project.languages,
+    programmingLanguage: Array.isArray(project.languages) ? project.languages : [project.languages],
     author: {
       "@type": "Person",
-      name: "Wael",
+      name: "Wael Ouail Lebaili",
+      alternateName: ["Wael", "Ouail", "Lebaili", "Mohamed Ouail"],
+      url: "https://www.wael-dev.me",
     },
+    dateCreated: project.dateCreated || new Date().toISOString().split("T")[0],
+    keywords: "full stack development, React, Node.js, web development, portfolio",
   }
+}
+
+export const injectProjectSchema = (projects) => {
+  projects.forEach((project) => {
+    const schema = getProjectSchema(project)
+    const scriptTag = document.createElement("script")
+    scriptTag.type = "application/ld+json"
+    scriptTag.textContent = JSON.stringify(schema)
+    document.head.appendChild(scriptTag)
+  })
 }

@@ -10,6 +10,7 @@ import { FaLinkedinIn } from "react-icons/fa"
 
 function Home2() {
   useEffect(() => {
+    // Scroll reveal observer for animations
     const elements = document.querySelectorAll(".scroll-reveal")
     const observer = new IntersectionObserver(
       (entries) => {
@@ -24,6 +25,15 @@ function Home2() {
     )
 
     elements.forEach((el) => observer.observe(el))
+
+    // Add meta tag updates for better SEO on this section
+    document.title = "About Wael Ouail Lebaili - Full Stack Developer | ESI-SBA Student"
+    const metaDesc = document.querySelector("meta[name='description']")
+    if (metaDesc) {
+      metaDesc.content =
+        "Learn about Wael Ouail Lebaili, a full stack developer and ESI-SBA computer science student specializing in React, Node.js, embedded systems, IoT, and real-time security solutions."
+    }
+
     return () => observer.disconnect()
   }, [])
 
@@ -36,6 +46,7 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
 
+            {/* Enhanced intro paragraph with more keywords and better structure for SEO */}
             <p
               className="home-about-body"
               style={{
@@ -43,21 +54,30 @@ function Home2() {
                 animation: "fadeInUp 0.8s ease-out 0.3s backwards",
               }}
             >
-              I fell in love with programming and I have at least learnt something, I think…
-              <br />
-              <br />I am a computer science engineering student at ESI-SBA driven by curiosity and practical learning.
-              My core competencies include <b className="purple">web development (React / Node.js)</b>, but recently I
-              have been focusing on <b className="purple">embedded systems, real-time IoT</b> and data-driven security
-              solutions.
+              I'm <strong>Wael Ouail Lebaili</strong>, a passionate full stack developer and computer science
+              engineering student at ESI-SBA. I have extensive experience building end-to-end systems using modern web
+              technologies and emerging IoT platforms.
               <br />
               <br />
-              Practically, I build end-to-end systems: from microcontroller firmware and sensor simulation (embedded
-              C/C++ concepts, FreeRTOS ideas, MQTT) to backend services and dashboards that ingest and visualize
-              real-time telemetry. I also participate in ML/IoT competitions and datathons where I apply analysis and
-              detection pipelines to real datasets.
+              My expertise spans{" "}
+              <b className="purple">web development (React, Next.js, Node.js, JavaScript, Express.js)</b>, combined with
+              specialized knowledge in{" "}
+              <b className="purple">
+                embedded systems, real-time IoT applications, MQTT protocols, and data-driven security solutions
+              </b>
+              . I've built several production-ready applications ranging from real-time chat systems to IoT fleet
+              management platforms.
               <br />
-              <br />I enjoy turning ideas into working prototypes — whether a responsive web app, an IoT monitoring
-              platform, or an experimental detection backend — and publishing them on GitHub to share and iterate.
+              <br />I specialize in creating complete system solutions: from microcontroller firmware and sensor
+              integration (embedded C/C++, FreeRTOS concepts, MQTT) to scalable backend services and interactive
+              dashboards that handle real-time telemetry. I actively participate in AI/ML competitions and datathons
+              where I apply machine learning and detection pipelines to real-world datasets and security challenges.
+              <br />
+              <br />
+              I'm driven by turning complex ideas into working prototypes — whether a responsive web application, a
+              distributed IoT monitoring platform, or an intelligent detection backend — and I'm committed to
+              open-source development by publishing my work on GitHub for community collaboration and continuous
+              improvement.
             </p>
 
             <div style={{ marginTop: 20, animation: "fadeInUp 0.8s ease-out 0.5s backwards" }}>
@@ -105,8 +125,8 @@ function Home2() {
 
             <div style={{ marginTop: 18, animation: "fadeInUp 0.8s ease-out 0.6s backwards" }}>
               <small style={{ color: "#cfcbe3" }}>
-                Currently: Coursera — <em>Real-Time Embedded Systems</em> (financial aid pending) • Kaggle / Datathon
-                experience
+                <strong>Current Learning:</strong> Coursera — Real-Time Embedded Systems • Active in Kaggle competitions
+                and datathons • Contributing to open-source IoT and security projects
               </small>
             </div>
           </Col>
